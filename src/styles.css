@@ -197,7 +197,7 @@
 .strategy-note { left: -15px; top: 22px; }.tomorrow-note { right: 20px; top: 285px; text-align: center; transform: rotate(-7deg); }
 .stat-divider { border-left: 1px solid oklch(0.84 0.035 160); }
 
-@media (min-width: 768px) and (max-width: 1200px) {
+@media (min-width: 901px) and (max-width: 1200px) {
   main { padding: 16px; }
   main > div { border-radius: 18px; }
   header { height: 64px !important; padding-left: 32px !important; padding-right: 32px !important; }
@@ -234,11 +234,52 @@
   #results span { font-size: 11px; }
 }
 
+@media (min-width: 768px) and (max-width: 900px) {
+  main { padding: 16px; }
+  header { height: 68px !important; padding-left: 34px !important; padding-right: 34px !important; }
+  .hero-stage { min-height: 0 !important; padding: 46px 36px 20px !important; }
+  .hero-stage > div:first-child { max-width: 650px; }
+  .hero-stage h1 { font-size: 52px; line-height: 1.05; }
+  .hero-stage p { margin-top: 18px; max-width: 620px; font-size: 15px; line-height: 1.5; }
+  .hero-stage > div:first-child > div:first-child { margin-bottom: 26px; }
+  .hero-stage > div:first-child > div:last-child { margin-top: 24px; }
+  .visual-stage { position: relative; inset: auto; height: 370px; margin: 8px -30px -10px 180px; opacity: 1; }
+  .blob-one { width: 390px; height: 390px; left: 12px; top: 4px; }
+  .blob-two { width: 190px; height: 190px; right: -15px; top: 35px; }
+  .person-image { width: 430px; height: 430px; right: 0; bottom: -20px; }
+  .metric-card, .social-card, .quote-card { display: block; transform: scale(.7); transform-origin: top left; }
+  .traffic-card { left: -65px; top: 50px; }
+  .leads-card { right: 12px; top: 25px; transform-origin: top right; }
+  .sales-card { right: -10px; top: 125px; transform-origin: top right; }
+  .social-card { display: grid; left: -80px; top: 165px; transform: rotate(-4deg) scale(.7); }
+  .quote-card { right: 0; top: 248px; transform: rotate(-3deg) scale(.65); transform-origin: top right; }
+  .scribble { display: none; }
+  .hero-stage > div:last-child { margin-top: 22px; justify-content: center; gap: 20px 28px; }
+  #results { padding: 20px 32px; }
+  #results > div { padding: 16px 28px; }
+  #results > div > div { gap: 14px; }
+  #results svg { width: 38px; height: 38px; }
+  #results strong { font-size: 21px; }
+  #results span { font-size: 12px; }
+}
+
 @media (max-width: 767px) {
+  .hero-stage { padding-top: 52px; padding-bottom: 18px; }
+  .hero-stage h1 { font-size: 43px; line-height: 1.06; }
+  .hero-stage p { margin-top: 25px; font-size: 17px; line-height: 1.52; }
+  .hero-stage > div:first-child > div:last-child { margin-top: 30px; }
   .visual-stage { position: relative; inset: auto; height: 345px; margin: 20px -45px -15px 10px; opacity: 1; }
   .blob-one { width: 320px; height: 320px; left: 25px; top: 15px; }
   .blob-two { width: 180px; height: 180px; right: 0; }
   .person-image { right: 0; bottom: -20px; width: 390px; height: 390px; }
   .hero-stage::after { display: none; }
+  .hero-stage > div:last-child { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 30px; gap: 18px 12px; }
+  .hero-stage > div:last-child > div { min-width: 0; gap: 8px; font-size: 12px; }
+  #results { padding: 18px; }
+  #results > div { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; padding: 18px 10px; }
+  #results > div > div { justify-content: flex-start; gap: 10px; padding: 12px 6px; }
+  #results svg { width: 32px; height: 32px; }
+  #results strong { font-size: 18px; }
+  #results span { font-size: 10px; }
   .stat-divider { border-left: 0; }
 }
