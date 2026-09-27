@@ -93,7 +93,7 @@ function Index() {
             </h1>
             <p className="mt-6 max-w-[650px] text-[17px] leading-[1.55] text-copy sm:text-[19px]">
               Result-driven digital marketing strategies to increase your brand<br className="hidden sm:block" />
-              visibility, attract the right audience, and turn clicks into customers.<br className="hidden sm:block" />
+              visibility, attract the right audience, and turn clicks into customers. <br className="hidden sm:block" />
               Let&apos;s grow your business together.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
