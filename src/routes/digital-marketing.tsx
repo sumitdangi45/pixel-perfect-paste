@@ -1,19 +1,27 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
   ArrowRight,
+  ArrowUpRight,
   BarChart3,
+  BadgeCheck,
   CircleUserRound,
   Clock3,
   Crosshair,
+  Megaphone,
   Play,
   ShoppingCart,
+  Sparkles,
   Star,
   UsersRound,
+  Zap,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import marketingProfessional from "@/assets/marketing-professional.png";
 import socialMediaService from "@/assets/social-media-service.jpg";
 import videoEditingService from "@/assets/video-editing-service.jpg";
+import clientPatel from "@/assets/client-patel.jpg";
+import clientJoshi from "@/assets/client-joshi.jpg";
+import clientGupta from "@/assets/client-gupta.jpg";
 
 export const Route = createFileRoute("/digital-marketing")({
   head: () => ({
@@ -72,6 +80,36 @@ const services = [
       "Monthly content calendars, custom graphic post designs, carousel infographics, and copywriting.",
       "Active community management, direct-message responses, hashtag strategy, and growth analytics.",
     ],
+  },
+];
+
+const reviews = [
+  {
+    tag: "Performance Ads & Landing Funnels",
+    metric: "+65% Enrolment Rate",
+    quote:
+      "Anni completely revamped our ad creatives, copywriting, and sales landing page. Our cost per student website signup dropped by 65% while course enrolment rates skyrocketed.",
+    name: "Kaushik Joshi",
+    role: "Founder, SkillsEdge Academy",
+    avatar: clientJoshi,
+  },
+  {
+    tag: "Social Media & Video Reels",
+    metric: "+380% Admission Leads",
+    quote:
+      "Anni Web Solution managed our complete social media handling, produced high-quality promotional video reels, and ran targeted digital ad campaigns for Sarvadnya Vidyapeeth. Their strategy resulted in a tremendous surge in student admissions.",
+    name: "Dr. Bhuleshwar Patel",
+    role: "Founder & Chairman, Sarvadnya Vidyapeeth",
+    avatar: clientPatel,
+  },
+  {
+    tag: "Instagram Growth & Reel Production",
+    metric: "6K+ New Followers",
+    quote:
+      "Anni Solution handled our complete Instagram channel management, edited engaging educational video reels, and grew our organic followers from 2,000 to 8,000+. The viral reels converted.",
+    name: "Dr. M. N. Gupta",
+    role: "Founder & MD, Vidyasagar Classes",
+    avatar: clientGupta,
   },
 ];
 
