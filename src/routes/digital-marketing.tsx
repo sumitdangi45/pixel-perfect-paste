@@ -34,7 +34,6 @@ export const Route = createFileRoute("/digital-marketing")({
   component: Index,
 });
 
-const navItems = ["Prebuilt", "Customized", "AI Automation", "Digital Marketing", "Pricing", "Contact Us"];
 
 const benefits = [
   { icon: BarChart3, label: "More Traffic" },
@@ -54,32 +53,6 @@ function Index() {
   return (
     <main className="min-h-screen bg-page-glow px-3 py-4 sm:px-5 sm:py-5">
       <div className="mx-auto max-w-[1440px] overflow-hidden rounded-[20px] bg-background shadow-[0_22px_60px_var(--shadow-shell)]">
-        <header className="flex h-[80px] items-center justify-between px-5 sm:px-10">
-          <a href="#top" className="flex items-center gap-2" aria-label="Anni home">
-            <span className="brand-mark" aria-hidden="true"><i /><i /></span>
-            <span className="leading-none">
-              <strong className="block font-display text-[29px] font-extrabold text-ink">Anni</strong>
-              <small className="mt-1 block text-[8px] font-extrabold text-ink">WEB SOLUTIONS PVT. LTD.</small>
-            </span>
-          </a>
-
-          <nav className="hidden h-full items-center gap-8 lg:flex" aria-label="Main navigation">
-            {navItems.map((item) => (
-              <a
-                key={item}
-                href={item === "Contact Us" ? "mailto:hello@anniweb.com" : `#${item.toLowerCase().replaceAll(" ", "-")}`}
-                className={`nav-link ${item === "Digital Marketing" ? "nav-link-active" : ""}`}
-              >
-                {item}
-              </a>
-            ))}
-          </nav>
-
-          <Button asChild variant="marketing" className="hidden h-12 px-7 text-[15px] font-semibold lg:inline-flex">
-            <a href="mailto:hello@anniweb.com">Get a Free Quote <ArrowRight /></a>
-          </Button>
-          <Button variant="ghost" size="icon" className="lg:hidden" aria-label="Open navigation"><Menu /></Button>
-        </header>
 
         <section id="top" className="hero-stage relative min-h-[640px] overflow-hidden px-6 pb-5 pt-16 sm:px-11 lg:min-h-[638px] lg:px-12 lg:pt-[78px]">
           <div className="relative z-20 max-w-[680px]">
