@@ -9,7 +9,6 @@ import {
   Play,
   ShoppingCart,
   Star,
-  TrendingUp,
   UsersRound,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
