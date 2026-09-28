@@ -106,6 +106,7 @@
   --copy: oklch(0.48 0.05 262);
   --stats: oklch(0.975 0.018 155);
   --shadow-brand: oklch(0.32 0.12 151 / 0.2);
+  --star: oklch(0.82 0.155 85);
   --shadow-shell: oklch(0.42 0.03 160 / 0.12);
   --page-glow: radial-gradient(circle at 50% 0%, oklch(0.91 0.04 155), oklch(0.98 0.012 155) 52%, oklch(0.95 0.02 165));
   --hero-wash: linear-gradient(105deg, oklch(1 0 0) 0%, oklch(0.99 0.012 160) 45%, oklch(0.92 0.055 155) 100%);
