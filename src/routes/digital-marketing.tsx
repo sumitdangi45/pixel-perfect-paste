@@ -5,7 +5,6 @@ import {
   CircleUserRound,
   Clock3,
   Crosshair,
-  Menu,
   Play,
   ShoppingCart,
   Star,
