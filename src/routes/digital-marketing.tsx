@@ -12,6 +12,8 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import marketingProfessional from "@/assets/marketing-professional.png";
+import socialMediaService from "@/assets/social-media-service.jpg";
+import videoEditingService from "@/assets/video-editing-service.jpg";
 
 export const Route = createFileRoute("/digital-marketing")({
   head: () => ({
@@ -46,6 +48,31 @@ const stats = [
   { icon: BarChart3, value: "200+", label: "Campaigns Run" },
   { icon: Star, value: "4.9/5", label: "Client Satisfaction" },
   { icon: Clock3, value: "On-Time", label: "Delivery" },
+];
+
+const services = [
+  {
+    title: "Video Shooting & Professional Editing",
+    description: "High-quality brand video shoots, cinematic product shoots, trending reel editing, color grading, sound design, and short-form content production.",
+    image: videoEditingService,
+    imageAlt: "Professional video editor working with cinematic footage",
+    points: [
+      "Professional product and brand video shoots with studio-grade lighting and camera gear.",
+      "Cinematic video editing, Instagram Reels and YouTube Shorts, transitions, and color grading.",
+      "High-engagement video scripts, voiceover integration, and sound design tailored for viral reach.",
+    ],
+  },
+  {
+    title: "Social Media Management & Account Handling",
+    description: "Complete end-to-end management of your social media profiles. We handle monthly content planning, graphic post creation, scheduling, caption writing, and active audience engagement.",
+    image: socialMediaService,
+    imageAlt: "Social media manager planning a content calendar",
+    points: [
+      "Full account management across Instagram, Facebook, LinkedIn, YouTube, and X.",
+      "Monthly content calendars, custom graphic post designs, carousel infographics, and copywriting.",
+      "Active community management, direct-message responses, hashtag strategy, and growth analytics.",
+    ],
+  },
 ];
 
 function Index() {
@@ -115,6 +142,47 @@ function Index() {
                 <Icon className="h-12 w-12 text-primary" strokeWidth={2.2} />
                 <div><strong className="block font-display text-[25px] font-extrabold text-ink">{value}</strong><span className="text-[14px] text-copy">{label}</span></div>
               </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="marketing-catalog bg-background px-6 pb-20 pt-14 sm:px-10 lg:px-14 lg:pb-28 lg:pt-20">
+          <div className="mx-auto max-w-[1080px] text-center">
+            <span className="inline-flex rounded-full bg-accent px-5 py-2 text-[13px] font-bold text-primary">Our Marketing Catalog</span>
+            <h2 className="mt-5 font-display text-[36px] font-extrabold leading-tight text-ink sm:text-[46px]">
+              Explore Our <span className="text-primary">Marketing Solutions</span>
+            </h2>
+          </div>
+
+          <div className="mx-auto mt-16 max-w-[1080px] space-y-24 lg:mt-20 lg:space-y-28">
+            {services.map((service, index) => (
+              <article key={service.title} className="service-row grid items-center gap-10 lg:grid-cols-2 lg:gap-24">
+                <div className={`service-image-frame ${index % 2 === 1 ? "lg:order-2" : ""}`}>
+                  <img
+                    src={service.image}
+                    alt={service.imageAlt}
+                    width={1200}
+                    height={800}
+                    loading="lazy"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <div className={index % 2 === 1 ? "lg:order-1" : ""}>
+                  <h3 className="font-display text-[28px] font-extrabold leading-[1.18] text-ink sm:text-[32px]">{service.title}</h3>
+                  <p className="mt-5 text-[16px] leading-[1.55] text-copy">{service.description}</p>
+                  <ol className="mt-7 space-y-4">
+                    {service.points.map((point, pointIndex) => (
+                      <li key={point} className="flex items-start gap-3 text-[14px] leading-[1.4] text-copy">
+                        <span className="service-number">{String(pointIndex + 1).padStart(2, "0")}</span>
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ol>
+                  <Button asChild variant="marketing" className="mt-8 h-12 px-6 text-[14px] font-semibold">
+                    <a href="mailto:hello@anniweb.com">Enquire Now <ArrowRight className="h-4 w-4" /></a>
+                  </Button>
+                </div>
+              </article>
             ))}
           </div>
         </section>
