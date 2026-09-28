@@ -43,7 +43,6 @@ function Index() {
           <Link to="/digital-marketing">Explore Digital Marketing <ArrowRight /></Link>
         </Button>
       </section>
-      </div>
     </main>
   );
 }
