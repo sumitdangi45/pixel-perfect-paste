@@ -1,19 +1,27 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
   ArrowRight,
+  ArrowUpRight,
   BarChart3,
+  BadgeCheck,
   CircleUserRound,
   Clock3,
   Crosshair,
+  Megaphone,
   Play,
   ShoppingCart,
+  Sparkles,
   Star,
   UsersRound,
+  Zap,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import marketingProfessional from "@/assets/marketing-professional.png";
 import socialMediaService from "@/assets/social-media-service.jpg";
 import videoEditingService from "@/assets/video-editing-service.jpg";
+import clientPatel from "@/assets/client-patel.jpg";
+import clientJoshi from "@/assets/client-joshi.jpg";
+import clientGupta from "@/assets/client-gupta.jpg";
 
 export const Route = createFileRoute("/digital-marketing")({
   head: () => ({
@@ -72,6 +80,36 @@ const services = [
       "Monthly content calendars, custom graphic post designs, carousel infographics, and copywriting.",
       "Active community management, direct-message responses, hashtag strategy, and growth analytics.",
     ],
+  },
+];
+
+const reviews = [
+  {
+    tag: "Performance Ads & Landing Funnels",
+    metric: "+65% Enrolment Rate",
+    quote:
+      "Anni completely revamped our ad creatives, copywriting, and sales landing page. Our cost per student website signup dropped by 65% while course enrolment rates skyrocketed.",
+    name: "Kaushik Joshi",
+    role: "Founder, SkillsEdge Academy",
+    avatar: clientJoshi,
+  },
+  {
+    tag: "Social Media & Video Reels",
+    metric: "+380% Admission Leads",
+    quote:
+      "Anni Web Solution managed our complete social media handling, produced high-quality promotional video reels, and ran targeted digital ad campaigns for Sarvadnya Vidyapeeth. Their strategy resulted in a tremendous surge in student admissions.",
+    name: "Dr. Bhuleshwar Patel",
+    role: "Founder & Chairman, Sarvadnya Vidyapeeth",
+    avatar: clientPatel,
+  },
+  {
+    tag: "Instagram Growth & Reel Production",
+    metric: "6K+ New Followers",
+    quote:
+      "Anni Solution handled our complete Instagram channel management, edited engaging educational video reels, and grew our organic followers from 2,000 to 8,000+. The viral reels converted.",
+    name: "Dr. M. N. Gupta",
+    role: "Founder & MD, Vidyasagar Classes",
+    avatar: clientGupta,
   },
 ];
 
@@ -181,6 +219,62 @@ function Index() {
                   <Button asChild variant="marketing" className="mt-8 h-12 px-6 text-[14px] font-semibold">
                     <a href="mailto:hello@anniweb.com">Enquire Now <ArrowRight className="h-4 w-4" /></a>
                   </Button>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="reviews" className="testimonials bg-background px-5 pb-20 sm:px-10 lg:pb-28">
+          <div className="mx-auto max-w-[1080px] text-center">
+            <span className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2 text-[13px] font-bold text-primary">
+              <Sparkles className="h-4 w-4" /> Digital Marketing Reviews
+            </span>
+            <h2 className="mt-5 font-display text-[36px] font-extrabold leading-tight text-ink sm:text-[46px]">
+              Proven Growth Stories & <span className="text-primary">Client Feedback</span>
+            </h2>
+            <p className="mx-auto mt-5 max-w-[640px] text-[16px] leading-[1.6] text-copy">
+              See how leading brands, educational institutions, and businesses scale revenue, dominate social media, and get high-converting ad leads.
+            </p>
+          </div>
+
+          <div className="review-stage">
+            {reviews.map((review, index) => (
+              <article
+                key={review.name}
+                className={`review-card ${index === 1 ? "review-featured order-first lg:order-2" : `review-side ${index === 0 ? "lg:order-1" : "lg:order-3"}`}`}
+              >
+                <span className="review-quote-mark" aria-hidden="true">&rdquo;</span>
+                <div className="flex flex-wrap gap-2.5">
+                  <span className="review-tag review-tag-brand">
+                    <Megaphone className="h-3.5 w-3.5" /> {review.tag}
+                  </span>
+                  <span className="review-tag review-tag-metric">
+                    <Zap className="h-3.5 w-3.5" /> {review.metric}
+                  </span>
+                </div>
+                <div className="mt-5 flex items-center justify-between gap-3">
+                  <div className="review-stars" role="img" aria-label="Rated 5 out of 5 stars">
+                    {[0, 1, 2, 3, 4].map((star) => (
+                      <Star key={star} className="h-5 w-5" strokeWidth={0} fill="currentColor" />
+                    ))}
+                  </div>
+                  <span className="review-verified">
+                    <BadgeCheck className="h-4 w-4" /> Verified Client
+                  </span>
+                </div>
+                <blockquote className="mt-5 text-[15.5px] leading-[1.7] text-copy">
+                  &ldquo;{review.quote}&rdquo;
+                </blockquote>
+                <div className="review-author mt-7 flex items-center gap-4 pt-6">
+                  <img src={review.avatar} alt={review.name} width={816} height={816} loading="lazy" className="review-avatar" />
+                  <div className="min-w-0 flex-1">
+                    <strong className="block font-display text-[16px] font-bold text-ink">{review.name}</strong>
+                    <span className="text-[13px] leading-snug text-copy">{review.role}</span>
+                  </div>
+                  <a href="mailto:hello@anniweb.com" aria-label={`Get results like ${review.name}`} className="review-arrow">
+                    <ArrowUpRight className="h-4 w-4" />
+                  </a>
                 </div>
               </article>
             ))}
